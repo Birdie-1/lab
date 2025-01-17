@@ -41,6 +41,9 @@ $order = 1; //เริ่มนับแถวจาก 1
                 <th>ชื่อ</th>
                 <th>สกุล</th>
                 <th>วันเกิด</th>
+                <th>ที่อยู่</th>
+                <th>ทักษะพิเศษ</th>
+                <th>เบอร์โทรศัพท์</th>
                 <th>แก้ไขข้อมูล</th>
                 <th>ลบข้อมูล</th>
             </tr>
@@ -51,11 +54,14 @@ $order = 1; //เริ่มนับแถวจาก 1
             <tr>
                 <td><?php echo $order++;?></td>
                 <td><?php echo $row["emp_title"];?></td>
-                <td><?php echo $row["emp_name"]++;?></td>
-                <td><?php echo $row["emp_surname"]++;?></td>
-                <td><?php echo $row["emp_birthday"]++;?></td>
-                <td><a href="editform.php?emp_id=<?php echo $row["emp_id"]; ?>" class="btn btn-warning">แก้ไข</a></td>
-                <td><a href="deletedata.php?emp_id=<?php echo $row["emp_id"]; ?>" class="btn btn-danger">ลบข้อมูล</a></td>
+                <td><?php echo $row["emp_name"];?></td>
+                <td><?php echo $row["emp_surname"];?></td>
+                <td><?php echo $row["emp_birthday"];?></td>
+                <td><?php echo $row["emp_adr"];?></td>
+                <td><?php echo $row["emp_skill"];?></td>
+                <td><?php echo $row["emp_tel"];?></td>
+                <td><a href="editformdata.php?emp_id=<?php echo $row["emp_id"]; ?>" class="btn btn-warning">แก้ไข</a></td>
+                <td><a href="deletedata.php?emp_id=<?php echo $row["emp_id"]; ?>" class="btn btn-danger" onclick="return confirm('ยืนยันการลบข้อมูล')">ลบข้อมูล</a></td>
             </tr>
             
             <?php } ?>

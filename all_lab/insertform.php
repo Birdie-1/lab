@@ -4,121 +4,60 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>กรอกข้อมูลพนักงาน</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f9f9f9;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-        }
-        form {
-            background: #ffffff;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            width: 100%;
-            max-width: 400px;
-        }
-        h2 {
-            text-align: center;
-            color: #333333;
-        }
-        label {
-            display: block;
-            margin-bottom: 8px;
-            font-weight: bold;
-            color: #555555;
-        }
-        input[type="text"], input[type="date"] {
-            width: 100%;
-            padding: 10px;
-            margin-bottom: 15px;
-            border: 1px solid #cccccc;
-            border-radius: 4px;
-            box-sizing: border-box;
-        }
-        input[type="radio"] {
-            margin-right: 5px;
-        }
-        .radio-group {
-            margin-bottom: 15px;
-            display: flex;
-            align-items: center;
-            gap: 15px;
-        }
-        .button-group {
-            display: flex;
-            justify-content: space-between;
-            gap: 10px;
-        }
-        input[type="submit"], .cancel-button, .clear-button {
-            background-color: #4CAF50;
-            color: white;
-            border: none;
-            padding: 10px 15px;
-            border-radius: 4px;
-            cursor: pointer;
-            font-size: 16px;
-            width: 100%;
-            text-align: center;
-        }
-        input[type="submit"]:hover {
-            background-color: #45a049;
-        }
-        .cancel-button {
-            background-color: #f44336;
-        }
-        .cancel-button:hover {
-            background-color: #e53935;
-        }
-        .clear-button {
-            background-color: #ff9800;
-        }
-        .clear-button:hover {
-            background-color: #fb8c00;
-        }
-        hr {
-            margin: 20px 0;
-            border: none;
-            border-top: 1px solid #eeeeee;
-        }
-    </style>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
-    <form action="insertdata.php" method="POST">
-        <h2>ฟอร์มกรอกข้อมูลพนักงาน</h2>
-        <hr>
+    <div class="container my-3">
+    <h2 class="text-left">ฟอร์มแก้ไขข้อมูลพนักงาน</h2>
+    <hr>
+        <form action="insertdata.php" method="POST" class="bg-white p-4 rounded shadow-sm">
+            <div class="form-group col-6">
+                <label for="emp_title">คำนำหน้า :</label>
+                <select name="emp_title" class="form-control" required>
+                    <option value="นาย">นาย</option>
+                    <option value="นาง">นาง</option>
+                    <option value="นางสาว">นางสาว</option>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label for="emp_name">ชื่อ :</label>
+                <input type="text" name="emp_name" class="form-control"required>
+            </div>
 
-        <div class="radio-group">
-            <label>คำนำหน้า:</label>
-            <input type="radio" name="emp_title" value="นาย" id="mr" required>
-            <label for="mr">นาย</label>
+            <div class="form-group">
+                <label for="emp_surname">นามสกุล :</label>
+                <input type="text" name="emp_surname" class="form-control"  required>
+            </div>
 
-            <input type="radio" name="emp_title" value="นาง" id="mrs">
-            <label for="mrs">นาง</label>
+            <div class="form-group">
+                <label for="emp_birthday">วันเดือนปีเกิด :</label>
+                <input type="date" name="emp_birthday" class="form-control"  required>
+            </div>
 
-            <input type="radio" name="emp_title" value="นางสาว" id="miss">
-            <label for="miss">นางสาว</label>
-        </div>
+            <div class="form-group">
+                <label for="emp_adr">ที่อยู่ :</label>
+                <textarea name="emp_adr" class="form-control"></textarea>
+            </div>
 
-        <label for="emp_name">ชื่อ:</label>
-        <input type="text" name="emp_name" id="emp_name" required>
+            <div class="form-group">
+                <label for="emp_skill">ทักษะพิเศษ :</label>
+                <textarea name="emp_skill" class="form-control"></textarea>
+            </div>
 
-        <label for="emp_surname">นามสกุล:</label>
-        <input type="text" name="emp_surname" id="emp_surname" required>
+            <div class="form-group">
+                <label for="emp_tel">เบอร์โทรศัพท์ :</label>
+                <input type="tel" name="emp_tel" class="form-control" required>
+            </div>
 
-        <label for="emp_birthday">วันเดือนปีเกิด:</label>
-        <input type="date" name="emp_birthday" id="emp_birthday" required>
+            <div class="my-3">
+                <input type="submit" value="แก้ไขข้อมูล" class="btn btn-success">
+                <input type="reset" value="ล้างข้อมูล" class="btn btn-danger">
+                <a href="index.php" class="btn btn-primary">กลับหน้าแรก</a>
+            </div>
+        </form>
+    </div>
 
-        <div class="button-group">
-            <input type="submit" value="Submit">
-            <button type="button" class="cancel-button" onclick="window.location.href='index.php';">Cancel</button>
-            <button type="reset" class="clear-button">Clear</button>
-        </div>
-    </form>
 </body>
 </html>
