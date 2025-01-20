@@ -2,7 +2,7 @@
     require('dbconnect.php');
     $emp_id = $_GET["emp_id"];
     $sql = "DELETE FROM employee WHERE emp_id=$emp_id";
-    $result = mysqli_query($con,$sql);
+    $result = mysqli_query($con,query: $sql);
 
     if ($result) {
         header("location:index.php");

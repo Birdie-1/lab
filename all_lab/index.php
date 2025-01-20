@@ -26,7 +26,7 @@ $order = 1; //เริ่มนับแถวจาก 1
         <form action="searchdata.php" class="form-group my-3" method = "POST">
             <div class="row">
                 <div class="col-6">
-                    <input type="text" placeholder="กรอกชื่อพนักงานที่ต้องการ" name="namesearch" class="form-control">
+                    <input type="text" placeholder="กรอกชื่อพนักงานที่ต้องการค้นหา" class="form-control" name="emp_data" required>
                 </div>
                 <div class="col-6">
                     <input type="submit" value="ค้นหาข้อมูลพนักงาน"  class="btn btn-success">
