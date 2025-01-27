@@ -6,6 +6,8 @@
     <title>กรอกข้อมูลพนักงาน</title>
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+
 </head>
 <body>
     <div class="container my-3">
@@ -50,6 +52,39 @@
                 <label for="emp_tel">เบอร์โทรศัพท์ :</label>
                 <input type="tel" name="emp_tel" class="form-control" required>
             </div>
+
+            <div class="form-group">
+                <label for="emp_user">Username :</label>
+                <input type="text" name="emp_user" class="form-control" required>
+            </div>
+
+            <div class="form-group">
+                <label for="emp_pass">Password :</label>
+                <input type="password" name="emp_pass" class="form-control" required>
+            </div>
+
+            <div class="form-group">
+                <label for="emp_level">ระดับผู้ใช้งาน <i class='bx bxs-user-pin'></i></label>
+                <select name="emp_level" class="form-control" required>
+                    <option value="">--เลือกระดับการใช้งาน--</option>
+                    <option value="a">ผู้ดูแลระบบ</option>
+                    <option value="u">ผู้ใช้งาน</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="d_name">แผนก <i class='bx bxs-user-pin'></i></label>
+                <select name="d_name" class="form-control" required>
+                    <option value="">--เลือกแผนก--</option>
+                    <option value="1">ฝ่ายบริหาร</option>
+                    <option value="2">ฝ่ายการตลาด</option>
+                    <option value="3">ฝ่ายการเงิน</option>
+                    <option value="4">ฝ่ายผลิต</option>
+                    <option value="5">ฝ่าย HR</option>
+
+                </select>
+            </div>
+
 
             <div class="my-3">
                 <input type="submit" value="แก้ไขข้อมูล" class="btn btn-success">

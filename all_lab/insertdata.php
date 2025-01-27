@@ -10,12 +10,16 @@ $emp_birthday = $_POST["emp_birthday"];
 $emp_adr = $_POST["emp_adr"];
 $emp_skill = $_POST["emp_skill"];
 $emp_tel = $_POST["emp_tel"];
+$emp_user = $_POST["emp_user"];
+$emp_pass = $_POST["emp_pass"];
+$emp_level = $_POST["emp_level"];
+
+
 
 
 //Save info
-$sql = "INSERT INTO employee(emp_title,emp_name,emp_surname,emp_birthday,emp_adr,emp_skill,emp_tel ) VALUE('$emp_title','$emp_name','$emp_surname','$emp_birthday',
-'$emp_adr','$emp_skill','$emp_tel')";
-
+$sql = "INSERT INTO employee(emp_title,emp_name,emp_surname,emp_birthday,emp_adr,emp_skill,emp_tel,emp_user,emp_pass,emp_level) VALUE('$emp_title','$emp_name','$emp_surname','$emp_birthday',
+'$emp_adr','$emp_skill','$emp_tel','$emp_user','$emp_pass','$emp_level')";
 $result = mysqli_query($con, $sql, );
 
 //Check the workflow of insert command
